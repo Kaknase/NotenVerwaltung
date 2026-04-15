@@ -10,6 +10,7 @@ public class Schueler
     private Long schuelerId;
     private String vorname;
     private String nachname;
+    @Column(name = "schueler_alter")
     private int alter;
     private String klasse;
 

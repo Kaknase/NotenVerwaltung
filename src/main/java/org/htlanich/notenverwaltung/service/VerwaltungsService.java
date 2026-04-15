@@ -19,13 +19,14 @@ public class VerwaltungsService
         this.schuelerRepository = schuelerRepository;
     }
 
-    List<Schueler> findBySchuelerIdContainingIgnoreCase(long id)
+    public List<Schueler> alleSchueler()
     {
-        return schuelerRepository.findBySchuelerIdContainingIgnoreCase(id);
+        return schuelerRepository.findAll();
     }
 
-
     public List<Schueler> noten(Long id){
-        return findBySchuelerIdContainingIgnoreCase(id);
+        Schueler s1 = new Schueler("Fabio", "Lantos", 3, "3AHWIi");
+        schuelerRepository.save(s1);
+        return schuelerRepository.findAll();
     }
 }
