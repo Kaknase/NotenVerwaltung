@@ -3,6 +3,8 @@ package org.htlanich.notenverwaltung.model;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface schuelerRepository extends JpaRepository<Schueler, Long>{
+import java.util.List;
 
+public interface schuelerRepository extends JpaRepository<Schueler, Long>{
+    List<Schueler> findBySchuelerIdContainingIgnoreCase(long id);
 }
