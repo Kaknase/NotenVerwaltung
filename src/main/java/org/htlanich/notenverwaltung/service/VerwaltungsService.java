@@ -29,4 +29,7 @@ public class VerwaltungsService
         schuelerRepository.save(s1);
         return schuelerRepository.findAll();
     }
+
+
+
 }
