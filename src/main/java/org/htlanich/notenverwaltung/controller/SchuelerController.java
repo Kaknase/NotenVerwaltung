@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/notenverwaltung/schueler")
@@ -18,7 +18,7 @@ public class SchuelerController
     private VerwaltungsService verwaltungsService;
 
     @GetMapping("/anzeige/{id}")
-    public List<Schueler> getNoten(@PathVariable Long id){
+    public Optional<Schueler> getNoten(@PathVariable Long id){
         return verwaltungsService.noten(id);
     }
 }
