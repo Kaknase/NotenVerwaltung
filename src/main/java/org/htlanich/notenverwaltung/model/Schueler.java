@@ -1,6 +1,9 @@
 package org.htlanich.notenverwaltung.model;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Entity
 public class Schueler
@@ -8,11 +11,16 @@ public class Schueler
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long schuelerId;
+
     private String vorname;
     private String nachname;
     @Column(name = "schueler_alter")
     private int alter;
     private String klasse;
+
+    @OneToMany(mappedBy = "schueler", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Note> noten = new ArrayList();
+
 
     public Schueler() {}
 
@@ -61,5 +69,9 @@ public class Schueler
 
     public void setKlasse(String klasse) {
         this.klasse = klasse;
+    }
+
+    public List<Note> getNoten() {
+        return noten;
     }
 }

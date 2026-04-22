@@ -1,5 +1,6 @@
 package org.htlanich.notenverwaltung;
 
+import org.htlanich.notenverwaltung.model.Note;
 import org.htlanich.notenverwaltung.model.Schueler;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,5 +13,6 @@ public class NotenVerwaltungApplication
     {
         SpringApplication.run(NotenVerwaltungApplication.class, args);
     }
+
 
 }
